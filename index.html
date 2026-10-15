@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HustleMate AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">H</span>
+      <div><b>HustleMate</b><small>AI WORKSPACE</small></div>
+    </div>
+    <p class="menu-label">WORKSPACE</p>
+    <nav>
+      <button class="nav-item active" data-page="dashboard">⌂ Dashboard</button>
+      <button class="nav-item" data-page="content">✍ Content Writer</button>
+      <button class="nav-item" data-page="product">▧ Product Listings</button>
+      <button class="nav-item" data-page="pricing">₹ Pricing Assistant</button>
+      <button class="nav-item" data-page="proposal">▤ Proposals</button>
+      <button class="nav-item" data-page="settings">⚙ AI Settings</button>
+    </nav>
+    <div class="sidebar-bottom">✦ Open Innovation
+      <p>Built for independent creators.</p>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div><p class="eyebrow">YOUR BUSINESS, SIMPLIFIED</p>
+        <h1 id="page-title">Dashboard</h1></div>
+      <span class="profile">My Workspace</span>
+    </header>
+
+    <section id="dashboard" class="page active-page">
+      <div class="hero">
+        <div>
+          <span class="hero-label">YOUR AI SIDEKICK</span>
+          <h2>Big ideas.<br><span>Smarter hustle.</span></h2>
+          <p>Create business content, product listings and client proposals with AI.</p>
+          <button class="primary-btn" data-go="content">Start creating →</button>
+        </div>
+        <div class="hero-visual"><div class="ai-orb">H</div></div>
+      </div>
+
+      <div class="section-heading">
+        <h2>Your business toolkit</h2>
+        <p>Everything you need to work smarter.</p>
+      </div>
+
+      <div class="tool-grid">
+        <article class="tool-card" data-open="content">
+          <div class="tool-icon purple">✍</div>
+          <h3>Content Writer</h3>
+          <p>Create engaging promotional copy for your business.</p>
+          <button class="text-btn">Open tool →</button>
+        </article>
+        <article class="tool-card" data-open="product">
+          <div class="tool-icon orange">▧</div>
+          <h3>Product Listings</h3>
+          <p>Create product descriptions for your online store.</p>
+          <button class="text-btn">Open tool →</button>
+        </article>
+        <article class="tool-card" data-open="pricing">
+          <div class="tool-icon green">₹</div>
+          <h3>Pricing Assistant</h3>
+          <p>Calculate project quotes using costs and working hours.</p>
+          <button class="text-btn">Open tool →</button>
+        </article>
+        <article class="tool-card" data-open="proposal">
+          <div class="tool-icon blue">▤</div>
+          <h3>Proposal Generator</h3>
+          <p>Prepare professional proposals for clients.</p>
+          <button class="text-btn">Open tool →</button>
+        </article>
+      </div>
+      <div class="info-banner">
+        <h3>AI that works for you.</h3>
+        <p>Connect an open-weight model to generate useful business drafts locally.</p>
+      </div>
+    </section>
+
+    <section id="content" class="page">
+      <div class="page-intro"><h2>Content Writer</h2>
+        <p>Create promotional content for your business.</p></div>
+      <div class="workspace-card">
+        <label for="content-business">Business name</label>
+        <input id="content-business" placeholder="e.g. Handmade jewellery">
+        <label for="content-platform">Platform</label>
+        <select id="content-platform">
+          <option>Instagram</option><option>LinkedIn</option>
+          <option>Facebook</option><option>WhatsApp</option>
+        </select>
+        <label for="content-tone">Tone</label>
+        <select id="content-tone">
+          <option>Friendly and engaging</option><option>Professional</option>
+          <option>Creative and playful</option><option>Premium and elegant</option>
+        </select>
+        <label for="content-details">What are you promoting?</label>
+        <textarea id="content-details" placeholder="Describe your product or service"></textarea>
+        <button class="primary-btn full-btn" id="generate-content">✦ Generate content</button>
+        <div id="content-result" class="result-box hidden">
+          <h3>Your content draft</h3>
+          <pre id="content-output"></pre>
+          <button class="secondary-btn" data-copy="content-output">Copy text</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="product" class="page">
+      <div class="page-intro"><h2>Product Listing Generator</h2>
+        <p>Write clear product descriptions using verified details.</p></div>
+      <div class="workspace-card">
+        <label for="product-name">Product name</label>
+        <input id="product-name" placeholder="e.g. Ceramic coffee mug">
+        <label for="product-audience">Target audience</label>
+        <input id="product-audience" placeholder="e.g. Students and coffee lovers">
+        <label for="product-features">Product features</label>
+        <textarea id="product-features" placeholder="Material, size, features, uses"></textarea>
+        <label for="product-price">Price (₹)</label>
+        <input id="product-price" type="number" min="0" placeholder="499">
+        <button class="primary-btn full-btn" id="generate-product">Create product listing</button>
+        <div id="product-result" class="result-box hidden">
+          <h3>Your product listing</h3>
+          <pre id="product-output"></pre>
+          <button class="secondary-btn" data-copy="product-output">Copy text</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="page">
+      <div class="page-intro"><h2>Pricing Assistant</h2>
+        <p>Calculate a suggested project quote.</p></div>
+      <div class="workspace-card">
+        <label for="project-name">Project name</label>
+        <input id="project-name" placeholder="Website design">
+        <label for="hourly-rate">Hourly rate (₹)</label>
+        <input id="hourly-rate" type="number" min="0" placeholder="400">
+        <label for="project-hours">Working hours</label>
+        <input id="project-hours" type="number" min="0" placeholder="12">
+        <label for="project-costs">Additional expenses (₹)</label>
+        <input id="project-costs" type="number" min="0" placeholder="500">
+        <label for="profit-margin">Markup (%)</label>
+        <input id="profit-margin" type="number" min="0" value="20">
+        <button class="primary-btn full-btn" id="calculate-price">Calculate quote</button>
+        <div id="pricing-result" class="result-box hidden">
+          <h3>Suggested project quote</h3>
+          <div id="price-output" class="price-display"></div>
+          <pre id="pricing-breakdown"></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="proposal" class="page">
+      <div class="page-intro"><h2>Proposal Generator</h2>
+        <p>Create a first draft for a potential client.</p></div>
+      <div class="workspace-card">
+        <label for="client-name">Client name</label>
+        <input id="client-name" placeholder="Bright Future Studio">
+        <label for="service-name">Service offered</label>
+        <input id="service-name" placeholder="Social media management">
+        <label for="proposal-scope">Deliverables</label>
+        <textarea id="proposal-scope" placeholder="Describe the work you will do"></textarea>
+        <label for="proposal-budget">Budget (₹)</label>
+        <input id="proposal-budget" type="number" min="0" placeholder="5000">
+        <label for="proposal-timeline">Timeline</label>
+        <input id="proposal-timeline" placeholder="Two weeks">
+        <button class="primary-btn full-btn" id="generate-proposal">Generate proposal</button>
+        <div id="proposal-result" class="result-box hidden">
+          <h3>Your proposal draft</h3>
+          <pre id="proposal-output"></pre>
+          <button class="secondary-btn" data-copy="proposal-output">Copy text</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="settings" class="page">
+      <div class="page-intro"><h2>Local AI Settings</h2>
+        <p>Connect to an open-weight model running on your computer.</p></div>
+      <div class="workspace-card">
+        <label for="model-endpoint">Ollama endpoint</label>
+        <input id="model-endpoint" value="http://localhost:11434/api/generate">
+        <label for="model-name">Model name</label>
+        <input id="model-name" value="qwen2.5:3b">
+        <button class="primary-btn full-btn" id="save-settings">Save settings</button>
+        <button class="secondary-btn" id="test-connection">Test connection</button>
+        <p id="settings-status">Install Ollama and download a model before testing.</p>
+        <p><a href="https://docs.ollama.com/" target="_blank" rel="noopener">Ollama documentation</a></p>
+      </div>
+    </section>
+
+    <footer>HustleMate AI © 2026 · Built for independent creators.</footer>
+  </main>
+</body>
+</html>
